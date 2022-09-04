@@ -1,0 +1,35 @@
+{% extends "base.html" %} 
+
+{% block content %}
+
+<div style="margin-top: 10px; margin-left:10px; margin-bottom: 20px;">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="audioFile" required="true" />
+        <input type="submit" name="submit" value="Upload" />
+    </form>
+</div>
+
+<div>
+    <h3>Emotions Felts during the speech</h3>
+    {% if predictions == 0 %}
+        <h4>Please Upload your audio (Accepted formats are .m4a, .wav, .mp3)</h4>
+    
+    {% else %} 
+        <ol class="list-group list-group-numbered">
+            {% for i,emotions in predictions.items %}
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+    
+                    <div class="fw-bold">For duration of {{i}}s</div>
+
+                    {{emotions}}
+                </div>
+                <!-- <span class="badge bg-primary rounded-pill">14</span> -->
+            </li>
+            {% endfor %}
+        </ol>
+    {% endif %}
+</div>
+
+{% endblock content %}

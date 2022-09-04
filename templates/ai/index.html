@@ -1,0 +1,52 @@
+{% extends "base.html" %} 
+
+{% block content %}
+
+<div> 
+    <p class="text-center"> 
+       <figure class="text-center">
+            <blockquote class="blockquote">
+            <p>Calm.ai - Your Go To Meditation App</p>
+            </blockquote>
+            <figcaption class="blockquote-footer">
+            Embrace the power of AI in your journey of peace
+            </figcaption>
+        </figure> 
+    </p>
+</div>
+<div class="row">
+    <div class="col">
+        {% load static %} <img src="{% static 'ai/images/meditation.gif' %}" class="card-img-top" alt="Meditating", style="width: 100%; 
+                height: 100%; display: block;">
+    </div>
+
+    <div class="col">
+        <div class="row", style="float: right;"> 
+            
+            <div class="card col" style="width: 18rem; height: 60%; margin-right: 2rem; margin-top: 5rem;">
+                
+                {% load static %} <img src="{% static 'ai/images/calm2.png' %}" class="card-img-top" alt="Meditating", style="width: auto; 
+                height: 12rem; display: block; margin-left: 2rem; margin-right: 2rem; margin-top: 2rem; margin-right: 2rem;">
+                <div class="card-body">
+                <h5 class="card-title">Meditate</h5>
+                <p class="card-text">This app will help you with your distractions and let's you Meditate peacefully.</p>
+                <a href="/meditate" class="btn btn-primary">Start your Meditation</a>
+                </div>
+            </div>
+
+            <div class="card col" style="width: 18rem; height: 60%; margin-top: 5rem;">
+            
+                {% load static %} <img src="{% static 'ai/images/Calm.png' %}" class="card-img-top" alt="Emotional Health", style="width: auto; 
+                height: 12rem; display: block; margin-left: 2rem; margin-right: 2rem; margin-top: 2rem; margin-right: 2rem;">
+                <div class="card-body">
+                <h5 class="card-title">Emotional Health</h5>
+                <p class="card-text">This app will help you predict your Emotional Health.</p>
+                <a href="/pred_health" class="btn btn-primary">Check your Emotional Health</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+{% endblock content %}
