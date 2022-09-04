@@ -31,7 +31,7 @@ class VideoCamera(object):
     def __init__(self):
         self.vs = VideoStream(src=0).start()
         self.prev = time.time()
-        self.TIMER = int(5)
+        self.TIMER = int(60)
         self.finish = True
         
     def __del__(self):
